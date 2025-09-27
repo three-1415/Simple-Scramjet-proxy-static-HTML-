@@ -12,7 +12,7 @@ if (navigator.userAgent.includes("Firefox")) {
 }
 
 // pull in scramjet core (service worker helper) #FUCK SCERAM ONG
-importScripts("/scram/scramjet.all.js");
+importScripts("/media/archive/Ultraviolet-Static.zip/Simple-Scramjet-proxy-static-HTML--main/scram/scramjet.all.js");
 
 const { ScramjetServiceWorker } = $scramjetLoadWorker();
 const scramjet = new ScramjetServiceWorker();
@@ -79,10 +79,10 @@ scramjet.addEventListener("request", (e) => {
 		if (e.url.href === origin + "/") {
 			headers["content-type"] = "text/html";
 			e.response = new Response(playgroundData.html, { headers });
-		} else if (e.url.href === origin + "/style.css") {
+		} else if (e.url.href === origin + "/media/archive/Ultraviolet-Static.zip/Simple-Scramjet-proxy-static-HTML--main/style.css") {
 			headers["content-type"] = "text/css";
 			e.response = new Response(playgroundData.css, { headers });
-		} else if (e.url.href === origin + "/script.js") {
+		} else if (e.url.href === origin + "/media/archive/Ultraviolet-Static.zip/Simple-Scramjet-proxy-static-HTML--main/script.js") {
 			headers["content-type"] = "application/javascript";
 			e.response = new Response(playgroundData.js, { headers });
 		} else {
